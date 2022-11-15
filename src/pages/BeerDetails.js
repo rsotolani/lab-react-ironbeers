@@ -7,15 +7,23 @@ import axios from "axios";
 
 function BeerDetails() {
 
-    const { id } = useParams();
+    const { idBeer } = useParams();
     const [beer, setBeer] = useState([]);
 
     useEffect( () => {
-        axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`).then( (response) => {
-            console.log("response.data", response.data);
+        // axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`).then( (response) => {
+        //     console.log("response.data", response.data);
+        //     setBeer(response.data);
+        // })
+        async function fetchBeer() {
+            const response = await axios.get(
+                `https://ih-beers-api2.herokuapp.com/beers/${idBeer}`
+            );
             setBeer(response.data);
-        })
-    });
+        }
+        fetchBeer();
+
+    }, []);
 
     return ( 
         <div>

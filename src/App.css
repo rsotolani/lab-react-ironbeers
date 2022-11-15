@@ -78,3 +78,18 @@
 .tagline {
   color: gray;
 }
+
+.input {
+  background-color: white;
+  max-width: 200px;
+  height: 10px;
+  padding: 10px;
+  /* text-align: center; */
+  border: 2px solid rgb(0, 196, 255);
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.input-group {
+  margin: 10px;
+}
