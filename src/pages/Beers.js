@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 function Beers() {
     
@@ -22,10 +23,14 @@ function Beers() {
             {beers.map( (beer) => (
                 <div className="beers-items" key={beer._id}>
                     <div className="beers-imagem">
-                        <img src={beer.image_url} alt={beer.name} height="150px" />
+                        <Link to={`/beers/${beer._id}`}>
+                            <img src={beer.image_url} alt={beer.name} height="150px" />
+                        </Link>
                     </div>
                     <div className="beers-dados">
-                        <h3>{beer.name}</h3>
+                        <Link to={`/beers/${beer._id}`}>
+                            <h3>{beer.name}</h3>
+                        </Link>
                         <p>{beer.tagline}</p>
                         <p>Created by: {beer.contributed_by}</p>
                     </div>  
