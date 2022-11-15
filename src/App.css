@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Roboto'
 }
 
 
@@ -46,7 +49,7 @@
   padding: 10px;
   width: 90vh;
   color: white;
-  background-color: cadetblue;
+  background-color: rgb(0, 196, 255);
   font-size: 2rem;
   text-align: center;
   font-weight: 900;
@@ -66,4 +69,12 @@
   padding: 10px;
   margin-bottom: 10px;;
   border-bottom: 1px solid grey;
+}
+
+.name > a, .name > a:hover {
+  text-decoration: none;
+}
+
+.tagline {
+  color: gray;
 }

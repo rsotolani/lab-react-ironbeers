@@ -28,7 +28,10 @@ function BeerDetails() {
             <p>{beer.description}</p>
             <p>Created by: {beer.contributed_by}</p>
 
-            <Link to="/beers">Voltar</Link>
+            <div className="header alink">
+                <Link to="/beers">Voltar</Link>
+            </div>
+            
         </div>
      );
 }

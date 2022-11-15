@@ -28,10 +28,10 @@ function Beers() {
                         </Link>
                     </div>
                     <div className="beers-dados">
-                        <Link to={`/beers/${beer._id}`}>
-                            <h3>{beer.name}</h3>
+                        <Link to={`/beers/${beer._id}`} className="name">
+                            <h3 >{beer.name}</h3>
                         </Link>
-                        <p>{beer.tagline}</p>
+                        <p className="tagline">{beer.tagline}</p>
                         <p>Created by: {beer.contributed_by}</p>
                     </div>  
                 </div>
