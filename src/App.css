@@ -34,7 +34,7 @@
   background-image: url('assets/new-beer.png');
 }
 
-a, a:hover {
+.alink > a, .alink > a:hover {
   text-decoration: none;
   color: white;
 }

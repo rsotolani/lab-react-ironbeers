@@ -1,6 +1,7 @@
 //import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "../components/Header";
 
 function Beers() {
     
@@ -16,6 +17,7 @@ function Beers() {
 
     return ( 
         <div className="beers-list">
+            <Header />
             <h2>List of beers</h2>
             {beers.map( (beer) => (
                 <div className="beers-items" key={beer._id}>
