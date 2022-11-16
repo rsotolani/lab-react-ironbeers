@@ -15,18 +15,25 @@ function NewBeer() {
     
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
+
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
+
         const body = {
-                    "name": name,
-                    "tagline": tagline,
-                    "description": description,
-                    "first_brewed": firstBrewed,
-                    "brewers_tips": brewersTips,
-                    "attenuation_level": attenuationLevel,
-                    "contributed_by": contributedBy
-                };
-        axios
+            "name": name,
+            "tagline": tagline,
+            "description": description,
+            "first_brewed": firstBrewed,
+            "brewers_tips": brewersTips,
+            "attenuation_level": attenuationLevel,
+            "contributed_by": contributedBy
+        };
+        await axios
             .post("https://ih-beers-api2.herokuapp.com/beers/new", body)
             .then((response) => {
                 //Reset the state
@@ -40,7 +47,7 @@ function NewBeer() {
 
                 //navigate to the / page
                 navigate("/");
-            })
+            });
     }
 
     return ( 
@@ -48,7 +55,7 @@ function NewBeer() {
             <Header />
             <h2>Add New Beer</h2>
             <form onSubmit={handleSubmit}>
-                <div class="input-group">
+                <div className="input-group">
                     <label className="label">Name</label>
                     <input
                         type="text"
@@ -59,7 +66,7 @@ function NewBeer() {
                     />
                 </div> 
                 
-                <div class="input-group">
+                <div className="input-group">
                     <label>Tagline</label>
                     <input
                         type="text"
@@ -70,7 +77,7 @@ function NewBeer() {
                     />
                 </div>
                 
-                <div class="input-group">
+                <div className="input-group">
                     <label>Description</label>
                     <input
                         type="text"
@@ -81,7 +88,7 @@ function NewBeer() {
                     />
                 </div>
                 
-                <div class="input-group">
+                <div className="input-group">
                     <label>First Brewed</label>
                     <input
                         type="text"
@@ -92,7 +99,7 @@ function NewBeer() {
                     />
                 </div>
 
-                <div class="input-group">
+                <div className="input-group">
                     <label>Brewers Tips</label>
                     <input
                         type="text"
@@ -103,7 +110,7 @@ function NewBeer() {
                     />
                 </div>
                 
-                <div class="input-group">
+                <div className="input-group">
                     <label>Attenuation Level</label>
                     <input
                         type="number"
@@ -114,7 +121,7 @@ function NewBeer() {
                     />
                 </div>
 
-                <div class="input-group">
+                <div className="input-group">
                     <label>Contributed By</label>
                     <input
                         type="text"
@@ -125,7 +132,7 @@ function NewBeer() {
                     />
                 </div>
                 
-                <button type="submit">Create Beer</button>
+                <button type="submit" className="button">Create Beer</button>
             </form>
         </div>
      );
